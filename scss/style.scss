@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');
+@import "color.scss";
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: $LightGrayishBlue;
+    // CARD
+    & .card{
+        max-width: 800px;
+        margin: 0 auto;
+        width: 100%;
+        height: 300px;
+        
+        & .container{
+            display: flex;
+            width: 100%;
+            height: 100%;
+            flex-direction: row;
+            background-color: #fff;
+            border-radius: 1rem 0 0 1rem;
+            & .image{
+                background-image: url("/images/drawers.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 38%;
+                height: 100%;      
+                border-radius: 1rem 0 0 1rem;
+            }
+            & .content{
+                font-family: 'Manrope';
+                width: 62%;
+                padding: 2.5rem;
+                & h1{
+                    font-weight: 700;
+                    font-size: 20px;
+                    color: $VeryDarkGrayishBlue;
+                }
+                & p.descibe{
+                    padding: 1rem 0;
+                    font-weight: 500;
+                    font-size: 15px;
+                    color:$DesaturatedDarkBlue;
+                }
+                & .info-user{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: .5rem 0;
+                    & .image-user{
+                        display: flex;
+                        img{
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 2rem;
+                            object-fit: cover;
+                        }
+                        & span{
+                            padding: 5px 16px;
+                            & p:nth-child(2){
+                                color: $GrayishBlue;
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+                // animation fade
+                @keyframes fade {
+                    from{
+                        opacity: 0;
+                    }
+                    to{
+                        opacity: 1;
+                    }
+                }
+                // 
+                & .share{
+                    user-select: none;
+                    position: relative;
+                    padding: 7px 10px;
+                    border-radius: 2rem;
+                    cursor: pointer;
+               
+                    & > img{
+                        background-color: $LightGrayishBlue;
+                        padding: .5rem;
+                        border-radius: 2rem;
+                    }
+                    & .content-share{
+                        animation: fade .2s;
+                        display: none;
+                        align-items: center;
+                        justify-content: center;
+                        position: absolute;
+                        background-color:$VeryDarkGrayishBlue;
+                        width: 200px;
+                        padding: .8rem;
+                        border-radius: .5rem;
+                        left: -75px;
+                        top: -75px;
+                     
+                        & p{
+                            display: flex;
+                            align-items: center;
+                            gap: 1rem;
+                            color: $GrayishBlue;
+                            letter-spacing: 4px;
+                            font-size: 12px;
+                        }
+                        &::after{
+                           content: "";
+                            width: 0;
+                            position: absolute;
+                           background-color: $VeryDarkGrayishBlue;
+                            height: 0;
+                            bottom: -14px;
+                            border-left: 15px solid #fff;
+                            border-right: 15px solid #fff;
+                            border-top:15px solid $VeryDarkGrayishBlue;
+                        }
+                    }
+                }
+                // active share state
+                & .share.active{
+                    
+                    & > img{
+                        content: url("/images/icon-share1.svg");
+                        background-color: $GrayishBlue;
+                    }
+                }
+            }   
+        }
+    }
+    //END 
+}
+
+@media screen and (max-width:800px){
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: $LightGrayishBlue;
+        // CARD
+        & .card{
+            max-width: 350px;
+            margin: 0 auto;
+            width: 100%;
+            height: 600px;
+            & .container{
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-color: #fff;
+                border-radius: 1rem 1rem 0.5rem 0.5rem;
+                & .image{
+                    background-image: url("/images/drawers.jpg");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    width: 100%;
+                    height: 38%;      
+                    border-radius: 1rem 1rem 0 0;
+                }
+                & .content{
+                    font-family: 'Manrope';
+                    width: 100%;
+                    height: 62%;
+                    padding: 2rem;
+                    & h1{
+                        line-height: 28px;
+                        font-weight: 700;
+                        font-size: 15px;
+                    }
+                    & p.descibe{
+                        padding: 1rem 0;
+                        font-weight: 500;
+                        font-size: 14.5px;
+                        line-height: 25px;
+                        color:$DesaturatedDarkBlue;
+                    }
+                    & .info-user{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 1.5rem 0;
+                        & .image-user{
+                            display: flex;
+                            img{
+                                width: 50px;
+                                height: 50px;
+                                border-radius: 2rem;
+                                object-fit: cover;
+                            }
+                            & span{
+                                padding: 5px 16px;
+                                & p:nth-child(2){
+                                    color: $GrayishBlue;
+                                }
+                            }
+                        }
+                    }
+                    & .share{
+                        user-select: none;
+                        position: absolute;
+                        padding: 7px 10px;
+                        border-radius: 2rem;
+                        cursor: pointer;
+                        z-index: 111;
+                        right: 225px;
+                        & .content-share{
+                            animation: fade .2s;
+                            display: none;
+                            align-items: center;
+                            justify-content: left;
+                            position: absolute;
+                            background-color:$VeryDarkGrayishBlue;
+                            width: 350px;
+                            padding: 2rem;
+                            border-radius: 0 0 .5rem .5rem;
+                            top:-30px;
+                            left: -274px;
+                            bottom: -30px;
+                            z-index: -1;
+                  
+                            & p{
+                                display: flex;
+                                align-items: center;
+                                gap: 1rem;
+                                color: $GrayishBlue;
+                                letter-spacing: 4px;
+                                font-size: 12px;
+                            }
+                            &::after{
+                               content: none;
+
+                            }
+                        }
+                    }
+
+                }   
+            }
+        }
+        //END 
+    }
+}
+@media screen and (max-width:730px){
+    body{
+        // CARD
+        & .card{
+            & .container{
+                & .content{
+                    & .share{
+                        right: 185px;
+                        }
+                    }
+
+                }   
+            }
+        }
+}
+@media screen and (max-width:650px){
+    body{
+        // CARD
+        & .card{
+            & .container{
+                & .content{
+                    & .share{
+                        right: 155px;
+                        }
+                    }
+
+                }   
+            }
+        }
+}
+@media screen and (max-width:570px){
+    body{
+        // CARD
+        & .card{
+            & .container{
+                & .content{
+                    & .share{
+                        right: 115px;
+                        }
+                    }
+
+                }   
+            }
+        }
+}
+@media screen and (max-width:420px){
+    body{
+        // CARD
+        & .card{
+
+            & .container{
+                & .content{
+                    & .share{
+                        right: 55px;
+                        }
+                    }
+
+                }   
+            }
+        }
+}
+@media screen and (max-width:395px){
+    body{
+        // CARD
+        & .card{
+
+            & .container{
+                & .content{
+                    & .share{
+                        right: 45px;
+                        }
+                    }
+
+                }   
+            }
+        }
+}
+@media screen and (max-width:376px){
+    body{
+        // CARD
+        & .card{
+
+            & .container{
+                & .content{
+                    & .share{
+                        right: 40px;
+                        }
+                    }
+
+                }   
+            }
+        }
+}
+@media screen and (max-width:361px){
+    body{
+        // CARD
+        & .card{
+
+            & .container{
+                & .content{
+                    & .share{
+                        right: 30px;
+                        }
+                    }
+
+                }   
+            }
+        }
+}
+@media screen and (max-width:320px){
+    body{
+        // CARD
+        & .card{
+
+            & .container{
+                & .content{
+                    & .share{
+                        right: 20px;
+                        }
+                    }
+
+                }   
+            }
+        }
+}

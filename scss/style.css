@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: hsl(210, 46%, 95%);
+}
+body .card {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  height: 300px;
+}
+body .card .container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  background-color: #fff;
+  border-radius: 1rem 0 0 1rem;
+}
+body .card .container .image {
+  background-image: url("/images/drawers.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 38%;
+  height: 100%;
+  border-radius: 1rem 0 0 1rem;
+}
+body .card .container .content {
+  font-family: "Manrope";
+  width: 62%;
+  padding: 2.5rem;
+}
+body .card .container .content h1 {
+  font-weight: 700;
+  font-size: 20px;
+  color: hsl(217, 19%, 35%);
+}
+body .card .container .content p.descibe {
+  padding: 1rem 0;
+  font-weight: 500;
+  font-size: 15px;
+  color: hsl(214, 17%, 51%);
+}
+body .card .container .content .info-user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+body .card .container .content .info-user .image-user {
+  display: flex;
+}
+body .card .container .content .info-user .image-user img {
+  width: 50px;
+  height: 50px;
+  border-radius: 2rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body .card .container .content .info-user .image-user span {
+  padding: 5px 16px;
+}
+body .card .container .content .info-user .image-user span p:nth-child(2) {
+  color: hsl(212, 23%, 69%);
+  font-size: 15px;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body .card .container .content .share {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  position: relative;
+  padding: 7px 10px;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+body .card .container .content .share > img {
+  background-color: hsl(210, 46%, 95%);
+  padding: 0.5rem;
+  border-radius: 2rem;
+}
+body .card .container .content .share .content-share {
+  animation: fade 0.2s;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background-color: hsl(217, 19%, 35%);
+  width: 200px;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  left: -75px;
+  top: -75px;
+}
+body .card .container .content .share .content-share p {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: hsl(212, 23%, 69%);
+  letter-spacing: 4px;
+  font-size: 12px;
+}
+body .card .container .content .share .content-share::after {
+  content: "";
+  width: 0;
+  position: absolute;
+  background-color: hsl(217, 19%, 35%);
+  height: 0;
+  bottom: -14px;
+  border-left: 15px solid #fff;
+  border-right: 15px solid #fff;
+  border-top: 15px solid hsl(217, 19%, 35%);
+}
+body .card .container .content .share.active > img {
+  content: url("/images/icon-share1.svg");
+  background-color: hsl(212, 23%, 69%);
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: hsl(210, 46%, 95%);
+  }
+  body .card {
+    max-width: 350px;
+    margin: 0 auto;
+    width: 100%;
+    height: 600px;
+  }
+  body .card .container {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 1rem 1rem 0.5rem 0.5rem;
+  }
+  body .card .container .image {
+    background-image: url("/images/drawers.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 38%;
+    border-radius: 1rem 1rem 0 0;
+  }
+  body .card .container .content {
+    font-family: "Manrope";
+    width: 100%;
+    height: 62%;
+    padding: 2rem;
+  }
+  body .card .container .content h1 {
+    line-height: 28px;
+    font-weight: 700;
+    font-size: 15px;
+  }
+  body .card .container .content p.descibe {
+    padding: 1rem 0;
+    font-weight: 500;
+    font-size: 14.5px;
+    line-height: 25px;
+    color: hsl(214, 17%, 51%);
+  }
+  body .card .container .content .info-user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+  }
+  body .card .container .content .info-user .image-user {
+    display: flex;
+  }
+  body .card .container .content .info-user .image-user img {
+    width: 50px;
+    height: 50px;
+    border-radius: 2rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  body .card .container .content .info-user .image-user span {
+    padding: 5px 16px;
+  }
+  body .card .container .content .info-user .image-user span p:nth-child(2) {
+    color: hsl(212, 23%, 69%);
+  }
+  body .card .container .content .share {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+    position: absolute;
+    padding: 7px 10px;
+    border-radius: 2rem;
+    cursor: pointer;
+    z-index: 111;
+    right: 225px;
+  }
+  body .card .container .content .share .content-share {
+    animation: fade 0.2s;
+    display: none;
+    align-items: center;
+    justify-content: left;
+    position: absolute;
+    background-color: hsl(217, 19%, 35%);
+    width: 350px;
+    padding: 2rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+    top: -30px;
+    left: -274px;
+    bottom: -30px;
+    z-index: -1;
+  }
+  body .card .container .content .share .content-share p {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: hsl(212, 23%, 69%);
+    letter-spacing: 4px;
+    font-size: 12px;
+  }
+  body .card .container .content .share .content-share::after {
+    content: none;
+  }
+}
+@media screen and (max-width: 730px) {
+  body .card .container .content .share {
+    right: 185px;
+  }
+}
+@media screen and (max-width: 650px) {
+  body .card .container .content .share {
+    right: 155px;
+  }
+}
+@media screen and (max-width: 570px) {
+  body .card .container .content .share {
+    right: 115px;
+  }
+}
+@media screen and (max-width: 420px) {
+  body .card .container .content .share {
+    right: 55px;
+  }
+}
+@media screen and (max-width: 395px) {
+  body .card .container .content .share {
+    right: 45px;
+  }
+}
+@media screen and (max-width: 376px) {
+  body .card .container .content .share {
+    right: 40px;
+  }
+}
+@media screen and (max-width: 361px) {
+  body .card .container .content .share {
+    right: 30px;
+  }
+}
+@media screen and (max-width: 320px) {
+  body .card .container .content .share {
+    right: 20px;
+  }
+}/*# sourceMappingURL=style.css.map */
